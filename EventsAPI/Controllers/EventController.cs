@@ -28,7 +28,7 @@ namespace EventsAPI.Controllers
         }
 
         [HttpGet("[action]")]
-        public async Task<IActionResult> EventOrganizers(EventContext _context)
+        public async Task<IActionResult> EventOrganizers()
         {
             var organizers = await _context.EventOrganizers.ToListAsync();
             return Ok(organizers);
