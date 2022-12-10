@@ -13,21 +13,23 @@ namespace EventsAPI.Data
         {
             context.Database.Migrate();
 
+            if (!context.EventItem.Any())
+            {
+                context.EventItem.AddRange(GetEventItems());
+                context.SaveChanges();
+
+                if (!context.EventOrganizers.Any())
+            {
+                context.EventOrganizers.AddRange(GetEventOrganizers());
+                context.SaveChanges();
+            }
             if (!context.EventTypes.Any())
             {
                 context.EventTypes.AddRange(GetEventTypes());
                 context.SaveChanges();
             }
-            if (!context.EventOrganizers.Any())
-            {
-                context.EventOrganizers.AddRange(GetEventOrganizers());
-                context.SaveChanges();
-            }
-            if (!context.EventOrganizers.Any())
-            {
-                context.EventOrganizers.AddRange((EventOrganizer)GetEventItems());
-                context.SaveChanges();
-            }
+
+        }
         }
 
         private static IEnumerable<EventItem> GetEventItems()

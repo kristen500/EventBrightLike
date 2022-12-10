@@ -58,7 +58,7 @@ namespace EventsAPI.Data
 
                 e.HasOne(t => t.EventOrganizer)
                 .WithMany()
-                .HasForeignKey(t => t.EventOrganizer);
+                .HasForeignKey(t => t.EventOrganizerId);
             });
         }
     }
