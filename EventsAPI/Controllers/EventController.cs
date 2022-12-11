@@ -21,12 +21,6 @@ namespace EventsAPI.Controllers
             var types = await _context.EventTypes.ToListAsync();
             return Ok(types);
         }
-
-        public EventContext Get_context()
-        {
-            return _context;
-        }
-
         [HttpGet("[action]")]
         public async Task<IActionResult> EventOrganizers()
         {
