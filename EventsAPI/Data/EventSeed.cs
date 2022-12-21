@@ -64,10 +64,10 @@ namespace EventsAPI.Data
             return new List<EventItem>
             {
 
-                new EventItem { EventTypeId = 1, EventOrganizerId = 1, Description = "Everyone is Santa all over Downtown Seattle to Drink, eat, dance, and be merry", Name = "SantaCon", Price = 15, PictureUrl = "" },
-            new EventItem { EventTypeId = 2, EventOrganizerId = 2, Description = "5k Run", Name = "ItsaRunderfulLife", Price = 25, PictureUrl = "" },
-            new EventItem { EventTypeId = 3, EventOrganizerId = 3, Description = "80s Party", Name = "NiteWave", Price = 20, PictureUrl = "" },
-            new EventItem { EventTypeId = 4, EventOrganizerId = 4, Description = "Enjoy handcrafted cocktails while exploring boutique shops ", Name = "BallardCocktailTrail", Price = 45, PictureUrl = "" },
+            new EventItem { EventTypeId = 1, EventOrganizerId = 1, Description = "Everyone is Santa all over Downtown Seattle to Drink, eat, dance, and be merry", Name = "SantaCon", Price = 15, PictureUrl = "http://externaleventbaseurltobereplaced/api/event1" },
+            new EventItem { EventTypeId = 2, EventOrganizerId = 2, Description = "5k Run", Name = "ItsaRunderfulLife", Price = 25, PictureUrl = "http://externaleventbaseurltobereplaced/api/event2" },
+            new EventItem { EventTypeId = 3, EventOrganizerId = 3, Description = "80s Party", Name = "NiteWave", Price = 20, PictureUrl = "http://externaleventbaseurltobereplaced/api/event3" },
+            new EventItem { EventTypeId = 4, EventOrganizerId = 4, Description = "Enjoy handcrafted cocktails while exploring boutique shops ", Name = "BallardCocktailTrail", Price = 45, PictureUrl = "http://externaleventbaseurltobereplaced/api/event4" },
 
             };
         }
