@@ -7,17 +7,16 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
+COPY ["WebMVCaPPLICATION/WebMVCaPPLICATION.csproj", "WebMVCaPPLICATION/"]
+RUN dotnet restore "WebMVCaPPLICATION/WebMVCaPPLICATION.csproj"
 COPY . .
-RUN dotnet restore "EventsAPI.csproj"
-
-RUN dotnet build "EventsAPI.csproj" -c Release -o /app/build
+WORKDIR "/src/WebMVCaPPLICATION"
+RUN dotnet build "WebMVCaPPLICATION.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "EventsAPI.csproj" -c Release -o /app/publish /p:UseAppHost=false
-
-RUN sed -i 's/DEFAULT@SECLEVEL=2/DEFAULT@SECLEVEL=1/g' /etc/ssl/openssl.cnf
+RUN dotnet publish "WebMVCaPPLICATION.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "EventsAPI.dll"]
+ENTRYPOINT ["dotnet", "WebMVCaPPLICATION.dll"]

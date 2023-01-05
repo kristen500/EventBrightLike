@@ -29,7 +29,7 @@ services:
       MSSQL_SA_PASSWORD: ProductAPI123(!)
       SA_PASSWORD: ProductAPI123(!)
     ports:
-      - "1500:1434"
-    container_name: eventssqlserver
+      - "6000:1434"
+    container_name: jewelssqlserver
     networks:
       - backend
